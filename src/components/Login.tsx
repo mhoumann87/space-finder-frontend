@@ -59,31 +59,38 @@ export class Login extends React.Component<LoginProps, LoginState> {
 
     if (this.state.loginAttempted) {
       if (this.state.loginSuccessful) {
-        loginMessage = <label>Login Successful</label>;
+        loginMessage = <p className='success'>Login Successful</p>;
       } else {
-        loginMessage = <label>Password or Username are wrong</label>;
+        loginMessage = <p className='error'>Password or Username are wrong</p>;
       }
     } else {
-      loginMessage = <label>Please enter username and password</label>;
+      loginMessage = <p>Please enter username and password</p>;
     }
 
     return (
-      <div>
-        <h2>Please login</h2>
+      <div className='form-box'>
+        <h2>Login</h2>
         <form onSubmit={e => this.handleSubmit(e)}>
-          <input
-            value={this.state.userName}
-            type='text'
-            onChange={e => this.setUserName(e)}
-          />
+          <label htmlFor='username'>
+            User Name:
+            <input
+              name='username'
+              value={this.state.userName}
+              type='text'
+              onChange={e => this.setUserName(e)}
+            />
+          </label>
+          <label htmlFor='password'>
+            Password:
+            <input
+              name='password'
+              value={this.state.password}
+              type='password'
+              onChange={e => this.setPassword(e)}
+            />
+          </label>
           <br />
-          <input
-            value={this.state.password}
-            type='password'
-            onChange={e => this.setPassword(e)}
-          />
-          <br />
-          <input type='submit' value='Login' />
+          <input type='submit' value='Login' className='btn' />
         </form>
         {loginMessage}
       </div>

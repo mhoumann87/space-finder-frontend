@@ -14,9 +14,12 @@ export class NavBar extends React.Component<{ user: User | undefined }, {}> {
 
     return (
       <div className='navbar'>
-        <Link to='/'>Home</Link>
-        <Link to='/profile'>Profile</Link>
-        {loginLogout}
+        <div className='primary-nav'>
+          <Link to='/'>Home</Link>
+          <Link to='/profile'>Profile</Link>
+        </div>
+
+        <div className='secondary-menu'>{loginLogout}</div>
       </div>
     );
   }
