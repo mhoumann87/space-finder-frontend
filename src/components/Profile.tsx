@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { User, UserAttribute } from '../model/User';
 import { AuthService } from '../services/AuthService';
 
+import './Profile.css';
+
 interface ProfileState {
   userAttributes: UserAttribute[];
 }
@@ -42,6 +44,10 @@ export class Profile extends React.Component<ProfileProps, ProfileState> {
 
     return (
       <table>
+        <tr>
+          <th>Information about {this.props.user!.userName}</th>
+          <th></th>
+        </tr>
         <tbody>{rows}</tbody>
       </table>
     );
@@ -49,10 +55,11 @@ export class Profile extends React.Component<ProfileProps, ProfileState> {
 
   render() {
     return (
-      <div>
+      <div className='profile-main'>
+        <h2>Profile</h2>
         {this.props.user ? (
           <div>
-            <h3>Welcome {this.props.user.userName}</h3>
+            <h3>Welcome back {this.props.user.userName}</h3>
             <p>Here are your information:</p>
             {this.renderUserAttributes()}
           </div>
