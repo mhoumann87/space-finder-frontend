@@ -35,4 +35,16 @@ export class DataService {
 
     return result;
   }
+
+  public async reserveSpace(spaceId: string): Promise<string | undefined> {
+    const randNum = Math.random();
+
+    const resNum = Math.floor(Math.random() * 10000).toString();
+
+    if (randNum > 0.5) {
+      return resNum;
+    } else {
+      return undefined;
+    }
+  }
 }
