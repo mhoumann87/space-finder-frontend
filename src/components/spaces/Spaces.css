@@ -1,0 +1,11 @@
+.spaces h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  padding: 0 1em;
+}
+.spaces__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  padding: 1em;
+}

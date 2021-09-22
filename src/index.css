@@ -16,6 +16,11 @@ code {
     monospace;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 a {
   transition: 200ms ease-in-out;
 }

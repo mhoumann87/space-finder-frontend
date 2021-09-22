@@ -4,6 +4,8 @@ import { Space } from '../../model/Space';
 import { DataService } from '../../services/DataService';
 import { SpaceComponent } from './SpaceComponent';
 
+import './Spaces.css';
+
 interface SpacesState {
   spaces: Space[];
 }
@@ -46,13 +48,14 @@ export class Spaces extends Component<SpacesProps, SpacesState> {
         />
       );
     }
+    return rows;
   }
 
   render() {
     return (
-      <div>
+      <div className='spaces'>
         <h2>Our Spaces</h2>
-        {this.renderSpaces()}
+        <div className='spaces__grid'>{this.renderSpaces()}</div>
       </div>
     );
   }

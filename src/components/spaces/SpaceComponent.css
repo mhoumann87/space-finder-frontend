@@ -1,0 +1,20 @@
+.space__card {
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 5px 4px 13px 0px rgba(0, 0, 0, 0.46);
+}
+
+.space__card--content {
+  padding: 1em;
+}
+
+.space__card--title {
+  font-size: 1.4rem;
+}
+
+.reserve-btn {
+  background-color: rgb(0, 88, 0);
+  font-size: 1.2rem;
+  padding: 0.25em 0.5em;
+}
